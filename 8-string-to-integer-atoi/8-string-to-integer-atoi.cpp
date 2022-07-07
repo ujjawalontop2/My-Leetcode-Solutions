@@ -21,8 +21,8 @@ public:
              
                 ans=ans*10+(s[k]-'0');
                 
-                if(ans>=INT_MAX && sign==1) return INT_MAX;
-                if(ans>INT_MAX && sign ==-1) return INT_MIN;
+                if(ans*sign>=INT_MAX ) return INT_MAX;
+                if(ans*sign<=INT_MIN) return INT_MIN;
             }
             else break;
             
