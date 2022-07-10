@@ -140,10 +140,11 @@ vector<int> leftView(Node *root)
        ans.push_back(q.front()->data);
        
        for(int i=0;i<count;i++){
-           Node *temp=q.front();
+           //Node *temp=q.front();
+           
+           if(q.front()->left) q.push(q.front()->left);
+           if(q.front()->right) q.push(q.front()->right);
            q.pop();
-           if(temp->left) q.push(temp->left);
-           if(temp->right) q.push(temp->right);
         }
         
        }
