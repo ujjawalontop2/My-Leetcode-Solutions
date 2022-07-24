@@ -4,12 +4,16 @@ public:
     int solve(int i, vector<pair<int,int>> &a, int m, int n) {
         if(i == a.size()) return 0;
         if(dp[i][m][n] != -1) return dp[i][m][n];
-        int notake = solve(i+1,a,m,n);
+        
+        
         int take = -1;
         int c_zero = a[i].first, c_one = a[i].second;
+        
         if(c_zero <= m and c_one <= n) {
             take = 1 + solve(i+1,a,m-c_zero,n-c_one);
         }
+        int notake = solve(i+1,a,m,n);
+
         return dp[i][m][n] = max(take, notake);
     }
     
