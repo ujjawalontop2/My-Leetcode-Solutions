@@ -5,20 +5,18 @@ public:
         int n=nums.size();
         int l=0,h=n-1;
         while(l<=h){
-            cout << l << " " << h << endl;
+            //cout << l << " " << h << endl;
             int mid=(l+h)/2;
             int next=(mid+1)%n,prev=(mid+n-1)%n;
             
-            if(nums[mid]<=nums[next]&&nums[mid]<=nums[prev]) {
-                return mid;
-            }
-            else if(nums[mid]>=nums[0]) l=mid+1;
+           
+            if(nums[mid]>=nums[0]) l=mid+1;
             else h=mid-1;
                         
 
            
         }
-        return -1;
+        return l;
     }
    
     int search(vector<int>& nums, int target) {
